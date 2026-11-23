@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ChipFab 3D — 반도체 제조 과정</title>
+<meta name="description" content="웨이퍼에서 DRAM·NAND(SSD)까지, 반도체가 만들어지는 과정을 3D로 단계별로 보여주는 오픈소스 사이트">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<header>
+  <h1>ChipFab<span>3D</span></h1>
+  <nav id="tabs"></nav>
+</header>
+<main>
+  <aside>
+    <p id="about"></p>
+    <div id="list"></div>
+  </aside>
+  <section id="stage">
+    <canvas id="c"></canvas>
+    <div id="card">
+      <div id="bar"></div>
+      <small id="ph"></small>
+      <h2 id="t"></h2>
+      <p id="d"></p>
+      <div id="legend"></div>
+      <div id="ctl">
+        <button id="prev">← 이전</button>
+        <button id="play">▶ 자동 재생</button>
+        <button id="next">다음 →</button>
+      </div>
+    </div>
+  </section>
+</main>
+<noscript>이 사이트는 JavaScript(WebGL)가 필요합니다.</noscript>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
