@@ -16,7 +16,13 @@
 <body>
 <header>
   <h1>ChipFab<span>3D</span></h1>
-  <nav id="tabs"></nav>
+  <div id="picker">
+    <button id="pick" aria-haspopup="listbox" aria-expanded="false"><span><b id="pn"></b><small id="ps"></small></span><i>▾</i></button>
+    <div id="pop" hidden>
+      <input id="q" type="search" placeholder="부품 검색 (예: GPU, 메모리, 센서)" autocomplete="off" aria-label="부품 검색">
+      <div id="opts" role="listbox"></div>
+    </div>
+  </div>
 </header>
 <main>
   <aside>

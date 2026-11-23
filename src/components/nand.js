@@ -120,7 +120,7 @@ const ssd = {
 };
 
 export default {
-  id: 'nand', name: 'NAND Flash', sub: 'ROM · SSD · 비휘발성 메모리',
+  id: 'nand', name: 'NAND Flash', sub: 'ROM · SSD · 비휘발성 메모리', cat: '메모리', kw: 'rom ssd 낸드 플래시 flash memory 메모리 저장장치 비휘발성',
   about: 'SSD에 쓰이는 3D NAND Flash는 전원이 꺼져도 데이터가 남는 "읽기 전용처럼 보존되는" 메모리입니다. 층층이 쌓아 올리는 3D 구조를 단계별로 만들어 봅니다.',
   steps: [
     ...waferSteps('#9a63e0', block, C1),

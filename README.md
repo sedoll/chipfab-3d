@@ -7,12 +7,17 @@
 
 ## 지금 들어 있는 것
 
-| 부품 | 내용 |
-|---|---|
-| **DRAM (RAM)** | 잉곳 → 웨이퍼 → STI → 게이트 → 이온주입 → 커패시터 → 비트라인 → 구리 배선 → 동작 원리 → 패키징 → DIMM (23단계) |
-| **NAND Flash (ROM/SSD)** | 잉곳 → 웨이퍼 → 산화막/질화막 적층 → 채널 홀 → ONO 막 → 텅스텐 게이트 교체 → 계단 구조 → 비트라인 → 동작 원리 → 패키징 → M.2 SSD (18단계) |
+| 분류 | 부품 | 내용 |
+|---|---|---|
+| 메모리 | **DRAM (RAM)** | 잉곳 → 웨이퍼 → STI → 게이트 → 이온주입 → 커패시터 → 비트라인 → 구리 배선 → 동작 원리 → 패키징 → DIMM |
+| 메모리 | **NAND Flash (ROM/SSD)** | 산화막/질화막 적층 → 채널 홀 → ONO 막 → 텅스텐 게이트 교체 → 계단 구조 → 비트라인 → 동작 원리 → M.2 SSD |
+| 메모리 | **HBM** | TSV 식각 → 구리 채움 → 박막화 → 8단 적층 → 몰딩 → GPU 옆 인터포저 실장 |
+| 로직 | **CPU** | 핀 → STI → 더미 게이트 → 에피 → HKMG → 콘택 → 다층 구리 배선 → 범프 → 플립칩 → IHS |
+| 로직 | **GPU** | CPU와 같은 FinFET 공정 + 인터포저/HBM 실장 → 그래픽카드 |
+| 센서 | **CMOS 이미지 센서** | DTI → 포토다이오드 → 전송 게이트 → 배선 → 컬러 필터 → 마이크로렌즈 → 카메라 모듈 |
+| 광소자 | **LED** | 사파이어 위 GaN 에피(n/MQW/p) → 메사 식각 → 전극 → 형광체 패키지 |
 
-준비 중: CPU/로직, CMOS 이미지 센서, LED …
+상단의 검색 가능한 선택 박스에서 부품을 고릅니다 (이름·설명·분류·키워드로 검색).
 
 > ⚠️ 학습용으로 **크게 단순화한 모델**입니다. 실제 공정의 치수·순서·구조와 다를 수 있습니다.
 
@@ -52,7 +57,7 @@ import { box, cyl, G } from '../lib.js';
 import { waferSteps, packageSteps } from './common.js';
 
 export default {
-  id: 'cpu', name: 'CPU', sub: '로직', about: '한 줄 소개',
+  id: 'cpu', name: 'CPU', sub: '로직', cat: '로직', kw: '검색용 키워드 processor 프로세서', about: '한 줄 소개',
   steps: [
     ...waferSteps('#4f7fd8', blockParts, cameraForBlock),   // 공통 웨이퍼 단계 재사용
     {
@@ -67,7 +72,7 @@ export default {
 };
 ```
 
-2. `src/components/index.js` 의 `parts` 배열에 추가합니다. 끝.
+2. `src/components/index.js` 의 `parts` 배열에 추가합니다. 끝. (`cat` 이 같은 부품은 선택 박스에서 묶여 보이고, `kw` 는 검색에 쓰입니다.)
 
 별도의 3D 코드 없이 "step 데이터"만 쓰면 되고, 앞/뒤/점프 이동과 애니메이션은 엔진이 알아서 처리합니다.
 

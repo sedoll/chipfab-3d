@@ -160,7 +160,7 @@ const dimm = {
 };
 
 export default {
-  id: 'dram', name: 'DRAM', sub: 'RAM · 휘발성 메모리',
+  id: 'dram', name: 'DRAM', sub: 'RAM · 휘발성 메모리', cat: '메모리', kw: 'ram 램 memory 메모리 디램 dimm 휘발성 커패시터',
   about: 'RAM의 주인공 DRAM은 트랜지스터 1개 + 커패시터 1개(1T1C)로 1비트를 저장합니다. 웨이퍼에서 메모리 모듈까지의 과정을 단계별로 따라가 보세요.',
   steps: [
     ...waferSteps('#4f7fd8', block, C1),
